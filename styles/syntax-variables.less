@@ -1,0 +1,51 @@
+@import "colors";
+
+// General colors
+@syntax-text-color: @white;
+@syntax-cursor-color: @yellow;
+@syntax-selection-color: @dark-gray;
+@syntax-background-color: @very-dark-gray;
+
+// Guide colors
+@syntax-wrap-guide-color: @dark-gray;
+@syntax-indent-guide-color: darken(@syntax-base, 10%);
+@syntax-invisible-character-color: darken(@syntax-base, 10%);
+
+// For find and replace markers
+@syntax-result-marker-color: @cyan;
+@syntax-result-marker-color-selected: @white;
+
+// Gutter colors
+@syntax-gutter-text-color: @syntax-base;
+@syntax-gutter-text-color-selected: @yellow;
+@syntax-gutter-background-color: @syntax-background-color;
+@syntax-gutter-background-color-selected: @syntax-gutter-background-color;
+
+// For git diff info. i.e. in the gutter
+@syntax-color-renamed: @blue;
+@syntax-color-added: @teal;
+@syntax-color-modified: @orange;
+@syntax-color-removed: @red;
+
+// For use in base
+@syntax-base: @very-light-gray;
+@syntax-comment: darken(@syntax-base, 10%);
+@syntax-escaped: @indigo;
+@syntax-string: lighten(desaturate(@very-light-gray, 10%), 10%);
+@syntax-embedded: @blue;
+@syntax-embedded-punctuation: @yellow;
+@syntax-type: @yellow;
+@syntax-function-type: @red;
+@syntax-function-name: @blue;
+@syntax-storage: @blue;
+@syntax-class-type: @purple;
+@syntax-class-name: @yellow;
+@syntax-decorator: @blue;
+@syntax-keyword: @red;
+@syntax-control: @yellow;
+@syntax-inheritance: @orange;
+@syntax-property: @red;
+@syntax-parameter: @yellow;
+@syntax-operator: @yellow;
+@syntax-constant: @orange;
+@syntax-matcher: @yellow;

@@ -1,0 +1,77 @@
+// Syntax highlighting rules for Python
+// Requires MagicPython grammar to be installed!
+
+@m: syntax--python;
+
+.punctuation {
+
+  &.definition {
+    &.string,
+    &.parameters,
+    &.list,
+    &.inheritance,
+    &.dict {
+      &.begin,
+      &.end {
+        &.@{m} {
+          color: @yellow;
+        }
+      }
+    }
+
+    &.decorator.@{m} {
+      color: @blue;
+    }
+
+    &.comment.@{m} {
+      color: @yellow;
+    }
+
+    &.arguments {
+      &.begin,
+      &.end {
+        &.@{m} {
+          color: @yellow;
+        }
+      }
+    }
+  }
+
+  &.section {
+    &.class.begin.@{m} {
+      color: @purple;
+    }
+
+    &.function {
+      &.lambda.begin,
+      &.begin {
+        &.@{m} {
+          color: @red;
+        }
+      }
+    }
+  }
+
+  &.separator {
+    &.annotation {
+      &.result.@{m},
+      &.@{m} {
+        color: @blue;
+      }
+    }
+
+    &.arguments,
+    &.colon,
+    &.continuation.line,
+    &.dict,
+    &.element,
+    &.inheritance,
+    &.parameters,
+    &.period,
+    &.slice {
+      &.@{m} {
+      color: @yellow;
+      }
+    }
+  }
+}
