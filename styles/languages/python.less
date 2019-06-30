@@ -1,76 +1,249 @@
 // Syntax highlighting rules for Python
 // Requires MagicPython grammar to be installed!
 
-@m: syntax--python;
+.@{s}python {
+  .@{s}constant {
+    &.@{s}character {
+      &.@{s}escape {
+        color: @yellow;
 
-.punctuation {
-
-  &.definition {
-    &.string,
-    &.parameters,
-    &.list,
-    &.inheritance,
-    &.dict {
-      &.begin,
-      &.end {
-        &.@{m} {
-          color: @yellow;
+        &.@{s}regexp {
+          color: @teal;
         }
+      }
+
+      &.@{s}format {
+        color: @orange;
       }
     }
 
-    &.decorator.@{m} {
-      color: @blue;
+    &.@{s}language {
+      color: @cyan;
     }
 
-    &.comment.@{m} {
-      color: @yellow;
+    &.@{s}numeric,
+    &.@{s}other {
+      color: @orange;
     }
+  }
 
-    &.arguments {
-      &.begin,
-      &.end {
-        &.@{m} {
-          color: @yellow;
-        }
+  .@{s}meta {
+    &.@{s}function-call {
+      &.@{s}generic {
+        color: darken(@blue, 10%);
       }
     }
   }
 
-  &.section {
-    &.class.begin.@{m} {
-      color: @purple;
+  .@{s}punctuation {
+    &.@{s}definition {
+      &.@{s}parameters,
+      &.@{s}list,
+      &.@{s}inheritance,
+      &.@{s}dict {
+        &.@{s}begin,
+        &.@{s}end {
+          color: @yellow;
+        }
+      }
+
+      &.@{s}decorator {
+        color: @blue;
+      }
+
+      &.@{s}comment {
+        color: @yellow;
+      }
+
+      &.@{s}arguments {
+        &.@{s}begin,
+        &.@{s}end {
+          color: @yellow;
+        }
+      }
     }
 
-    &.function {
-      &.lambda.begin,
-      &.begin {
-        &.@{m} {
+    &.@{s}section {
+      &.@{s}class.@{s}begin {
+        color: @purple;
+      }
+
+      &.@{s}function {
+        &.@{s}lambda.@{s}begin,
+        &.@{s}begin {
           color: @red;
         }
       }
     }
+
+    &.@{s}separator {
+      &.@{s}annotation {
+        color: @blue;
+      }
+
+      &.@{s}arguments,
+      &.@{s}colon,
+      &.@{s}continuation.line,
+      &.@{s}dict,
+      &.@{s}element,
+      &.@{s}inheritance,
+      &.@{s}parameters,
+      &.@{s}period,
+      &.@{s}slice {
+        color: @yellow;
+      }
+    }
   }
 
-  &.separator {
-    &.annotation {
-      &.result.@{m},
-      &.@{m} {
+  .@{s}storage {
+    &.@{s}modifier {
+      &.@{s}declaration {
         color: @blue;
       }
     }
 
-    &.arguments,
-    &.colon,
-    &.continuation.line,
-    &.dict,
-    &.element,
-    &.inheritance,
-    &.parameters,
-    &.period,
-    &.slice {
-      &.@{m} {
-      color: @yellow;
+    &.@{s}type {
+      &.@{s}class {
+        color: @purple;
+      }
+      &.@{s}format {
+        color: @purple;
+      }
+      &.@{s}function {
+        color: @red;
+
+        &.@{s}async {
+          color: @yellow;
+        }
+        &.@{s}lambda {
+          color: @red;
+        }
+      }
+      &.@{s}imaginary.@{s}number,
+      &.@{s}number {
+        color: @orange;
+      }
+      &.@{s}string {
+        color: @orange;
+      }
+    }
+  }
+
+  .@{s}string {
+    .@{s}punctuation {
+      &.@{s}definition {
+        &.@{s}string {
+          color: @yellow;
+        }
+      }
+    }
+
+    color: @syntax-string;
+
+    &.@{s}interpolated {
+      color: @cyan;
+    }
+
+    &.@{s}quoted {
+      &.@{s}binary {
+        color: @teal;
+      }
+
+      &.@{s}docstring {
+        color: @very-light-gray;
+
+        .@{s}punctuation {
+          &.@{s}definition {
+            &.@{s}string {
+              color: @very-light-gray;
+            }
+          }
+        }
+      }
+    }
+
+    &.@{s}regexp {
+      color: @blue;
+    }
+  }
+
+  .@{s}support {
+    &.@{s}function {
+      &.@{s}builtin {
+        color: @cyan;
+      }
+
+      &.@{s}magic {
+        color: @cyan;
+      }
+    }
+
+    &.@{s}other {
+      &.@{s}escape {
+        color: @orange;
+      }
+
+      &.@{s}match {
+        color: @yellow;
+      }
+
+      &.@{s}parenthesis {
+        color: @yellow;
+      }
+    }
+
+    &.@{s}type {
+      color: @blue;
+
+      &.@{s}exception {
+        color: @bright-orange;
+      }
+
+      &.@{s}metaclass {
+        color: @orange;
+      }
+    }
+
+    &.@{s}variable {
+      color: @teal;
+    }
+  }
+
+  .@{s}variable {
+    &.@{s}language.@{s}special {
+      &.@{s}cls,
+      &.@{s}self {
+        color: @red;
+      }
+    }
+
+    &.@{s}legacy {
+      color: @teal;
+    }
+
+    &.@{s}parameter {
+      &.@{s}class {
+        color: @red;
+      }
+
+      &.@{s}function-call {
+        color: @yellow;
+      }
+
+      &.@{s}function {
+        &.@{s}language {
+          color: @yellow;
+
+          &.@{s}special {
+            &.@{s}cls {
+              color: @red;
+            }
+
+            &.@{s}self {
+              color: @red;
+            }
+          }
+        }
       }
     }
   }
