@@ -2,6 +2,30 @@
 // Requires MagicPython grammar to be installed!
 
 .@{s}python {
+  .@{s}comment {
+    &.@{s}typehint {
+      &.@{s}directive {
+        color: @purple;
+      }
+
+      &.@{s}ignore {
+        color: @yellow;
+      }
+
+      &.@{s}punctuation {
+        color: @blue;
+      }
+
+      &.@{s}type {
+        color: @yellow;
+      }
+
+      &.@{s}variable {
+        color: @yellow;
+      }
+    }
+  }
+
   .@{s}constant {
     &.@{s}character {
       &.@{s}escape {
@@ -32,6 +56,10 @@
       &.@{s}generic {
         color: darken(@blue, 10%);
       }
+    }
+
+    &.@{s}typehint {
+      color: @purple;
     }
   }
 
